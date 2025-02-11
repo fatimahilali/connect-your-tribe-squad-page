@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000; 
+    position: relative;
+    margin: 0;
+    height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 200vw;
+    height: 200vh;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0) 60%);
+}
+
+/* Algemene styling voor .logo-container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    height: auto;
+    position: relative;
+    left: 5%;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Desktop-aanpassingen voor .logo-container */
+@media (min-width: 768px) {
+    .logo-container {
+        flex-direction: row;
+        height: 30vh;
+    }
+}
+
+/* Logo-afbeelding binnen .logo-container */
+.logo-container img {
+    max-width: 90%;
+    height: auto;
+}
+
+/* Desktop-aanpassingen voor de afbeelding */
+@media (min-width: 768px) {
+    .logo-container img {
+        max-width: 8%;
+    }
+}
+
+/* Tekststijl binnen .logo-container */
+.logo-container h1 {
+    color: #ccc;
+    line-height: 1.6;
+    letter-spacing: 0.4rem;
+    font-family: monospace;
+    filter: brightness(1.2);
+    text-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-top: 4%;
+    margin-bottom: 2rem;
+}
+
+/* Algemene styling voor .header-container */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.625rem;
+    background: #1a1a1a;
+    color: white;
+    height: auto;
+    text-align: center;
+}
+
+/* Desktop-aanpassingen voor .header-container */
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 12vh;
+    }
+}
+
+/* Algemene styling voor de zoekcontainer */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+    margin-top: 10%;
+}
+
+/* Desktop-aanpassingen voor .search-container */
+@media (min-width: 768px) {
+    .search-container {
+        flex-direction: row;
+        width: auto;
+        margin-top: 0;
+    }
+}
+
+/* Zoekbalk binnen de .search-container */
+.search-container .search-bar {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    width: 80%;
+    background: #222;
+    color: #64c8f0;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.15);
+}
+
+/* Desktop-aanpassingen voor de zoekbalk */
+@media (min-width: 768px) {
+    .search-container .search-bar {
+        width: 13.75rem;
+    }
+}
+
+/* Dropdownmenu binnen de .search-container */
+.search-container .category-dropdown {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 0.875rem;
+    color: white;
+    border: 1px solid #64c8f0;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    background: linear-gradient(135deg, #444, #222);
+    box-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.1);
+}
+
+/* Toegankelijkheids*/
+.visually-hidden {
+    position: absolute;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    padding: 0;
+    margin: -0.0625rem;
+    overflow: hidden;
+    border: 0;
+}
+
+/* Focusstijlen voor  elementen */
+button:focus, 
+input:focus, 
+select:focus {
+    outline: 0.125rem solid #007BFF;
+    outline-offset: 0.125rem;
+}

@@ -1,0 +1,27 @@
+
+<!--  Header -->
+<header>
+    <div class="header-container">
+        <!-- Logo en Titel -->
+        <div class="logo-container">
+       <img src="{{ site.baseurl }}/assets/logo.jpeg" alt="Website Logo">
+        <h1>Next Chapter: Squad</h1>
+        </div>
+        <!-- Navigatie en Zoekfunctie -->
+        <nav>
+            <form class="search-container" role="search">
+            <label for="search" class="visually-hidden">Zoek eepn boek</label>
+                <input type="text" id="search" class="search-bar" placeholder="Search Book...">
+                <select class="category-dropdown">
+                    <option value="" disabled selected>Choose Category</option> 
+                    <option value="all">All categories</option>
+                    <option value="romance">Romance</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="horror">Horror</option>
+                </select>
+            </form>
+        </nav>
+    </div>
+</header>
