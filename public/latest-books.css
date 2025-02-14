@@ -1,4 +1,4 @@
-/* Add the Liberty font */
+/* Liberty font */
 @font-face {
     font-family: "Liberty";
     src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf');
@@ -45,14 +45,13 @@
     }
 }
 
-/* Flickering effect on specific letters */
 .text .letter-4,
 .text .letter-8 {
     animation: flicker 1.5s infinite alternate;
     transform: translateY(0.2em) rotate(3deg);
 }
 
-/* Flicker Animation */
+/* Flicker Animation van een project overgenomen  */
 @keyframes flicker {
 
     0%,

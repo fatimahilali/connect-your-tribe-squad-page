@@ -27,7 +27,7 @@ link :
 https://connect-your-tribe-squad-page-so6s.onrender.com/
 
 image :
-<img src="./public/assets/web.png" alt="website" style="width: 150px; height: auto;">
+<img src="./public/assets/web.png" alt="website" style="width: 350px; height: auto;">
 
 ## Kenmerken
 

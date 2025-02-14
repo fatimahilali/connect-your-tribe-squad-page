@@ -159,7 +159,7 @@
     box-shadow: 0 0 20px rgba(0, 255, 255, 1);
 }
 
-/* Smooth floating animation */
+/*  floating animation */
 @keyframes floatEffect {
     0% {
         transform: translateY(0px) rotate(-2deg);
