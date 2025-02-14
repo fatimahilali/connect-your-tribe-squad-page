@@ -24,9 +24,9 @@ In de body van de website is een neon-effect toegepast rondom de "Latest Books"-
 Daaronder verschijnen telkens vier boeken, die op basis van afbeeldingen van een paar eerstejaarsstudenten  die  bewerkt zijn.
 
 link :
+https://connect-your-tribe-squad-page-so6s.onrender.com/
 
 image :
-
 <img src="./public/assets/web.png" alt="website" style="width: 150px; height: auto;">
 
 ## Kenmerken
