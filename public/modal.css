@@ -1,0 +1,221 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0.625em);
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.4s ease-in-out;
+ 
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .modal {
+        backdrop-filter: blur(1em);
+    }
+}
+
+/* Modal layout */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.12);
+    padding: 1.2em;
+    border-radius: 0.75em;
+    text-align: center;
+    width: 90%; 
+    max-width: 25em; 
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    backdrop-filter: blur(1.5em);
+    font-family: 'Liberty', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 0 0 0.2em #00f0ff, 0 0 0.4em #00f0ff, 0 0 0.8em rgba(0, 240, 255, 0.8);
+    overflow-y: auto;
+    max-height: 80vh;
+    animation: popUp 0.5s ease-out;
+}
+
+/* Vergroot de modal alleen op grotere schermen */
+@media (min-width: 1024px) {
+    .modal-content {
+        width: 50%;
+        max-width: 50em;
+        padding: 2em;
+        left: 50%;
+
+    }
+}
+
+/* Popup effect */
+@keyframes popUp {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .modal-content {
+        width: 50%;
+        max-width: 50em;
+        padding: 2em;
+    }
+}
+/* Container voor de gebruikerskaarten */
+
+#modalUserList {
+    display: flex;
+    flex-direction: column; /* Standaard op mobiel: kaarten onder elkaar */
+    align-items: center;
+    gap: 1.5em;
+    padding: 1em;
+}
+
+/* Desktop: kaarten naast elkaar */
+@media (min-width: 1024px) {
+    #modalUserList {
+        flex-direction: row; /* Op desktop naast elkaar */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2em;
+        padding: 2em;
+    }
+}
+/* Auteurskaarten met neon-effect */
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+    height: 12em;
+    border-radius: 1em;
+    text-align: center;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transform: rotate(var(--tilt, 0deg));
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    animation: floatEffect 5s infinite ease-in-out alternate, changeColor 6s infinite alternate ease-in-out;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .user {
+        width: 12em;
+        height: 14em;
+    }
+}
+
+/* Neon border en 3D-effect */
+.user::before {
+    content: "";
+    position: absolute;
+    top: -0.3em;
+    left: -0.3em;
+    right: -0.3em;
+    bottom: -0.3em;
+    border-radius: 1.2em;
+    z-index: -1;
+    background: linear-gradient(45deg, #00f0ff, #ff00ff);
+    filter: blur(12px);
+    opacity: 0.8;
+}
+
+/* Profielfoto met neon rand */
+.user img {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00f0ff;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Hover-effecten */
+.user:hover {
+    transform: scale(1.08) rotate(0deg);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.9);
+}
+
+.user:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+}
+
+/* Smooth floating animation */
+@keyframes floatEffect {
+    0% {
+        transform: translateY(0px) rotate(-2deg);
+    }
+    100% {
+        transform: translateY(8px) rotate(2deg);
+    }
+}
+
+/* Kleurverandering animatie */
+@keyframes changeColor {
+    0%   { background: #ff6b6b; }
+    25%  { background: #6b6bff; }
+    50%  { background: #6bff6b; }
+    75%  { background: #ff6bff; }
+    100% { background: #ffba6b; }
+}
+
+/* Vertraging per kaart zodat ze niet tegelijk veranderen */
+.user:nth-child(1) { animation-delay: 0s; }
+.user:nth-child(2) { animation-delay: 1s; }
+.user:nth-child(3) { animation-delay: 2s; }
+.user:nth-child(4) { animation-delay: 3s; }
+.user:nth-child(5) { animation-delay: 4s; }
+
+/* Random draaiing per kaart */
+.user:nth-child(odd) { --tilt: -3deg; }
+.user:nth-child(even) { --tilt: 3deg; }
+
+/* Sluitknop met neon-glow */
+.close {
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #00f0ff;
+    border: none;
+    background: none;
+    text-shadow: 0 0 15px #00f0ff;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.close:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 25px #00f0ff;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .close {
+        top: 1.2em;
+        right: 2em;
+        font-size: 2.5rem;
+    }
+}
+
+
+

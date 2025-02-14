@@ -7,13 +7,16 @@
 html {
     font-size: 1rem;
     scroll-behavior: smooth;
+
+
 }
 
 body {
     background-color: #000; 
     position: relative;
-    margin: 0;
     height: 100vh;
+
+
 }
 
 body::before {
@@ -41,7 +44,7 @@ body::before {
 }
 
 /* Desktop-aanpassingen voor .logo-container */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .logo-container {
         flex-direction: row;
         height: 30vh;
@@ -50,12 +53,12 @@ body::before {
 
 /* Logo-afbeelding binnen .logo-container */
 .logo-container img {
-    max-width: 90%;
+    max-width: 20%;
     height: auto;
 }
 
 /* Desktop-aanpassingen voor de afbeelding */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .logo-container img {
         max-width: 8%;
     }
@@ -69,7 +72,7 @@ body::before {
     font-family: monospace;
     filter: brightness(1.2);
     text-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-top: 4%;
     margin-bottom: 2rem;
 }
@@ -87,7 +90,7 @@ body::before {
 }
 
 /* Desktop-aanpassingen voor .header-container */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .header-container {
         flex-direction: row;
         justify-content: space-between;
@@ -95,74 +98,90 @@ body::before {
     }
 }
 
-/* Algemene styling voor de zoekcontainer */
-.search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-    width: 100%;
-    margin-top: 10%;
-}
 
-/* Desktop-aanpassingen voor .search-container */
-@media (min-width: 768px) {
-    .search-container {
-        flex-direction: row;
-        width: auto;
-        margin-top: 0;
-    }
-}
 
-/* Zoekbalk binnen de .search-container */
-.search-container .search-bar {
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    width: 80%;
-    background: #222;
-    color: #64c8f0;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.15);
-}
-
-/* Desktop-aanpassingen voor de zoekbalk */
-@media (min-width: 768px) {
-    .search-container .search-bar {
-        width: 13.75rem;
-    }
-}
-
-/* Dropdownmenu binnen de .search-container */
-.search-container .category-dropdown {
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    border: none;
-    font-size: 0.875rem;
+/* Basisstijl voor de dropdown */
+.category-dropdown {
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem; 
+    font-size: 0.5rem;
     color: white;
-    border: 1px solid #64c8f0;
+    background: linear-gradient(135deg, #1a1a1a, #000);
+    border: 0.15rem solid #00f0ff;
+    width: 14rem;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     text-align: center;
-    background: linear-gradient(135deg, #444, #222);
-    box-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 1rem rgba(0, 240, 255, 0.3);
+    font-family: 'Liberty', sans-serif;
+    outline: none;
+    position: relative;
 }
 
-/* Toegankelijkheids*/
-.visually-hidden {
+/* Gloeiende neon-rand */
+.category-dropdown::before {
+    content: "";
     position: absolute;
-    width: 0.0625rem;
-    height: 0.0625rem;
-    padding: 0;
-    margin: -0.0625rem;
-    overflow: hidden;
-    border: 0;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 2.2rem;
+    background: linear-gradient(45deg, #00f0ff, #ff00ff);
+    filter: blur(10px);
+    opacity: 0.7;
+    z-index: -1;
 }
 
-/* Focusstijlen voor  elementen */
+/* Hover-effect voor de dropdown */
+.category-dropdown:hover {
+    background: #222;
+    box-shadow: 0 0 1.5rem rgba(0, 255, 255, 0.5);
+    transform: scale(1.05); /* Klein inzoom-effect */
+}
+
+/* Focus-effect voor de dropdown */
+.category-dropdown:focus {
+    border-color: #00f0ff;
+    box-shadow: 0 0 2rem rgba(0, 240, 255, 0.9);
+    background: #111;
+}
+
+/* Animatie voor het dropdown-icoon */
+.category-dropdown::after {
+    content: "▼";
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #00f0ff;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Wanneer dropdown geopend is, draait het icoon */
+.category-dropdown:focus::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .category-dropdown {
+        padding: 1rem 1.8rem;
+        font-size: 1rem;
+        width: 16rem;
+    }
+}
+
+
+/* Focusstijlen voor elementen */
 button:focus, 
 input:focus, 
 select:focus {
     outline: 0.125rem solid #007BFF;
     outline-offset: 0.125rem;
 }
+
+
+
+

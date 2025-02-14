@@ -1,8 +1,18 @@
-{% render 'partials/head.liquid', title: 'Squad page' %}
-
+{% render 'partials/head.liquid', title: ' ' %}
 
 
  {% render 'partials/header.liquid' %}  
+{% render 'partials/latest-books.liquid' %}
 
 
- 
+<div id="userList" style="display: none;">
+    {% comment %} De lijst wordt pas zichtbaar na selectie {% endcomment %}
+</div>
+
+<!-- Modal container -->
+<div id="userModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalUserList"></div>
+    </div>
+</div>
