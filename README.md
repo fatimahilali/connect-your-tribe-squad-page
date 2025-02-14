@@ -27,9 +27,9 @@ link :
 https://connect-your-tribe-squad-page-so6s.onrender.com/
 
 image :
-<img src="./public/assets/web.png" alt="website" style="width: 350px; height: auto;">
+<img src="./public/assets/web.png" alt="website" style="width: 450px; height: auto;">
 
-## Kenmerken
+## Kengit addmerken
 
 HTML Structuur
 Semantische structuur met header, main, section, footer.
