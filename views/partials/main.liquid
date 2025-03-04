@@ -1,0 +1,45 @@
+
+<header class="latest-books-section">
+  <h1 class="visually-hidden">Squad 1G</h1>
+  <span aria-hidden="true" class="text">
+    <span class="letter letter-1">S</span>
+    <span class="letter letter-2">Q</span>
+    <span class="letter letter-3">U</span>
+    <span class="letter letter-4">A</span>
+    <span class="letter letter-5">D</span>
+    <span class="letter letter-6"></span>
+    <span class="letter letter-7">1</span>
+    <span class="letter letter-8">G</span>
+  </span>
+</header>
+
+
+
+
+<!-- De hoofdcontainer die alle studentkaarten bevat -->
+<section class="students-list">
+  
+  <!-- Start de loop die door alle personen in 'persons' gaat -->
+  {% for person in persons %}
+
+    <!-- Een individuele studentkaart -->
+    <article class="student">
+
+      <!-- Verborgen koptekst voor screenreaders om aan te geven dat dit een student is -->
+      <h2 class="visually-hidden">Student</h2>
+
+      <!-- Sectie voor de studentafbeelding -->
+      <section class="student-images">
+
+        <!-- Afbeelding van de student -->
+        <img
+          src="/assets/{{ person.id }}.png"     <!-- Dynamische URL op basis van de student-ID -->
+          alt="{{ person.name }}"  <!-- De naam van de student als alt-tekst voor toegankelijkheid -->
+          onerror="this.src='/assets/default.png';">  <!-- Vervang afbeelding als deze niet geladen kan worden -->
+
+      </section>
+
+    </article>
+  {% endfor %} <!-- Einde van de loop die alle studenten weergeeft -->
+
+</section>

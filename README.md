@@ -15,13 +15,11 @@ De instructie vind je in: [INSTRUCTIONS](https://github.com/fdnd-task/connect-yo
 
 ## Beschrijving
 
-Mijn project is een boekenwebsite. Op de homepage staat het logo, een headline, en aan het einde van de regel een "Search"-knop met de optie "Select a Genre".
+Mijn project is een website voor Squad 1G. Bovenaan de pagina staat een grote neon-header met de naam van de squad. Dit effect is gemaakt met CSS-animaties voor een coole uitstraling.
 
-Wanneer een gebruiker op deze knop klikt, verschijnt een lijst met boekgenres. Zodra een gebruiker een genre selecteert (bijvoorbeeld Thriller), worden de boeken binnen dat genre gefilterd en opgehaald via de API. De genres en bijbehorende boeken zijn vooraf geselecteerd en gefilterd door eerstejaarsstudenten van de opleiding.
+Daaronder zie je de studenten van Squad 1G, met hun profielfoto’s. Deze worden automatisch opgehaald via een API. Als een foto niet beschikbaar is, wordt er een standaardafbeelding getoond.
 
-In de body van de website is een neon-effect toegepast rondom de "Latest Books"-header. Hiervoor heb ik CSS-animaties gebruikt om een speels en dynamisch design te creëren.
-
-Daaronder verschijnen telkens vier boeken, die op basis van afbeeldingen van een paar eerstejaarsstudenten  die  bewerkt zijn.
+De website is zo gemaakt dat hij toegankelijk is voor iedereen, ook voor mensen met een visuele beperking. Daarom is er een verborgen titel voor screenreaders.
 
 link :
 https://connect-your-tribe-squad-page-so6s.onrender.com/
@@ -32,24 +30,16 @@ image :
 ## Kengit addmerken
 
 HTML Structuur
-Semantische structuur met header, main, section, footer.
-Dynamische rendering met Liquid Templates % render % voor herbruikbare componenten.
-Dropdown voor genre-selectie select element.
-Modal-venster (div class="modal") voor het tonen van gebruikers.
-Dynamische boekenlijst % for book in books % die boeken genereert vanuit een array.
+Semantische structuur met <header>, <section>, <article>.
+Dynamische rendering met Liquid Templates ({% for person in persons %}) om studentengegevens automatisch op te halen.
+Neon-header (<span class="text">) met CSS-animaties voor Squad 1G.
+Responsieve grid-layout voor de studentenlijst met flexibele kolommen.
 
 CSS (Mobile-first met uitbreidingen voor desktop)
-Keyframes-animaties voor neon-effecten.
-Blur- en hover-effecten voor interactieve elementen.
-
-JavaScript
-API-aanroep (GET-request) om genres en boeken op te halen.
-GSAP voor boekanimaties en hover-effecten.
-Event Listeners voor dropdown en modal functionaliteit.
-
-Extra Features
-Neon-glow en blur-effecten in de UI voor een futuristische uitstraling.
-Mobile-first design, daarna verbeterd voor desktop met media queries.
+Neon- en glow-effecten met keyframes-animaties en text-shadow.
+Hover- en blur-effecten voor een interactieve look.
+Responsieve grid-layout (grid-template-columns) voor de studentensectie.
+Verborgen toegankelijkheidselementen met .visually-hidden voor screenreaders.
 
 ## Installatie
 
@@ -66,8 +56,6 @@ Mobile-first design, daarna verbeterd voor desktop met media queries.
 
 The Liquid Template Language
 stackoverflow.com
-restack.io
-gsap documentation
 keyframes van een project
 
 ## Licentie
